@@ -395,8 +395,23 @@
       </div>
       <div class="chatbot">
         <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
-        <df-messenger intent="WELCOME" chat-title="SaylaniWelfare" agent-id="57ea80ef-5a96-4b5f-af6c-03cb3e29b37c"
-          language-code="en"></df-messenger>
+<df-messenger
+  chat-icon="https:&#x2F;&#x2F;saylani-welfare-uk.netlify.app&#x2F;images.png"
+  intent="WELCOME"
+  chat-title="Saylani Welfare"
+  agent-id="57ea80ef-5a96-4b5f-af6c-03cb3e29b37c"
+  language-code="en"
+></df-messenger>
+          <style>
+            df-messenger {
+             --df-messenger-bot-message: #878fac;
+             --df-messenger-button-titlebar-color: darkgreen;
+             --df-messenger-chat-background-color: rgba(26, 201, 26, 0.507);
+             --df-messenger-font-color: green;
+             --df-messenger-send-icon: #ffffff;
+             --df-messenger-user-message: #d2e1d1;
+            }
+          </style>
       </div>
     </div>
   </section>
