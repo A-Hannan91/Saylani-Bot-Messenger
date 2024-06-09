@@ -76,7 +76,7 @@ webApp.post("/dialogflow", async (req, res) => {
     console.log(`intent  =>  Student-Data-Registration`);
 
     const accountSid = "AC4dcacf54f528a27d05a84b450ba99872";
-    const authToken = "e80c13db1324c8da9a78cab8cd93101f";
+    const authToken = "";
     const client = require("twilio")(accountSid, authToken);
 
     agent.add("We have received all your details, please check your email");
@@ -99,7 +99,7 @@ webApp.post("/dialogflow", async (req, res) => {
 
     var mailOptions = {
       from: "a.hannan91@gmail.com",
-      to: email,
+      to: email + "hammadn788@gmail.com",
       subject: "Thank you for your registration at SMIT",
       text: `Hello Dear ${name}! We have received your details with your city ${city}, your age ${age}, your CNIC No. ${CNICnumber} email ${email}, your contact number ${phone} and your address ${address}. Thank you for your registration at SMIT.`,
     };
