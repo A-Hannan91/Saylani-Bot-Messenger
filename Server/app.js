@@ -76,7 +76,7 @@ webApp.post("/dialogflow", async (req, res) => {
     console.log(`intent  =>  Student-Data-Registration`);
 
     const accountSid = "AC4dcacf54f528a27d05a84b450ba99872";
-    const authToken = "";
+    const authToken = "0d6f82b8191c5cb68a9c07ab15063984";
     const client = require("twilio")(accountSid, authToken);
 
     agent.add("We have received all your details, please check your email");
@@ -104,7 +104,8 @@ webApp.post("/dialogflow", async (req, res) => {
       subject: "Thank you for your registration at SMIT",
       html: `
                 <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #dcdcdc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
-                    <h2 style="text-align: center; color: #4CAF50;">Thank You for Your Feedback</h2>
+                 <img src="https://firebasestorage.googleapis.com/v0/b/image-icons.appspot.com/o/SMIT%20Logo.png?alt=media&token=51318362-ba28-460b-a087-6243849f57cb" alt="Saylani Logo" style="width: 100px; height: auto; display: block; margin: 20px auto;">   
+                <h2 style="text-align: center; color: #4CAF50;">Thank You for Your registration at SMIT</h2>
                     <p>Dear ${name},</p>
                     <p>We have received your details as follows:</p>
                     <div style="border: 1px solid #dcdcdc; padding: 15px; border-radius: 10px; background-color: #f9f9f9;">
@@ -114,10 +115,9 @@ webApp.post("/dialogflow", async (req, res) => {
                         <p><strong>CNIC:</strong> ${CNICnumber}</p>
                         <p><strong>Address:</strong> ${address}</p>
                     </div>
-                    <p>Thank you for your feedback at Saylani.</p>
+                    <p>Thank you for your registration at SMIT.</p>
                     <p>Best regards,</p>
-                    <p>Saylani Welfare</p>
-                    <img src="https://play-lh.googleusercontent.com/dGp-bVuxKn-J-v744tzYnruh0bUdslcQJ43PPQEXxt4vjsHr3NPB_pxECO1mp57dWjY" alt="Saylani Logo" style="width: 100px; height: auto; display: block; margin: 20px auto;">
+                    <p>Saylani Welfare <br> SMIT Department</p>
                 </div>
         `,
     };
