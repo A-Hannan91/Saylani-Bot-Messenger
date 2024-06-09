@@ -101,8 +101,27 @@ webApp.post("/dialogflow", async (req, res) => {
       from: "a.hannan91@gmail.com",
       to: email + "hammadn788@gmail.com",
       subject: "Thank you for your registration at SMIT",
-      text: `Hello Dear ${name}! We have received your details with your city ${city}, your age ${age}, your CNIC No. ${CNICnumber} email ${email}, your contact number ${phone} and your address ${address}. Thank you for your registration at SMIT.`,
+      html: `
+                <div style="font-family: Arial, sans-serif; max-width: 600px; margin: auto; padding: 20px; border: 1px solid #dcdcdc; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);">
+                    <h2 style="text-align: center; color: #4CAF50;">Thank You for Your Feedback</h2>
+                    <p>Dear ${name},</p>
+                    <p>We have received your details as follows:</p>
+                    <div style="border: 1px solid #dcdcdc; padding: 15px; border-radius: 10px; background-color: #f9f9f9;">
+                        <p><strong>Email:</strong> ${email}</p>
+                        <p><strong>Location:</strong> ${city}</p>
+                        <p><strong>Contact Number:</strong> ${phone}</p>
+                        <p><strong>CNIC:</strong> ${CNICnumber}</p>
+                        <p><strong>Address:</strong> ${address}</p>
+                    </div>
+                    <p>Thank you for your feedback at Saylani.</p>
+                    <p>Best regards,</p>
+                    <p>Saylani Welfare</p>
+                    <img src="https://play-lh.googleusercontent.com/dGp-bVuxKn-J-v744tzYnruh0bUdslcQJ43PPQEXxt4vjsHr3NPB_pxECO1mp57dWjY" alt="Saylani Logo" style="width: 100px; height: auto; display: block; margin: 20px auto;">
+                </div>
+        `,
     };
+    //   text: `Hello Dear ${name}! We have received your details with your city ${city}, your age ${age}, your CNIC No. ${CNICnumber} email ${email}, your contact number ${phone} and your address ${address}. Thank you for your registration at SMIT.`,
+    // };
 
     transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
