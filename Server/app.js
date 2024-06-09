@@ -76,7 +76,7 @@ webApp.post("/dialogflow", async (req, res) => {
     console.log(`intent  =>  Student-Data-Registration`);
 
     const accountSid = "AC4dcacf54f528a27d05a84b450ba99872";
-    const authToken = "0d6f82b8191c5cb68a9c07ab15063984";
+    const authToken = "";
     const client = require("twilio")(accountSid, authToken);
 
     agent.add("We have received all your details, please check your email");
@@ -111,6 +111,7 @@ webApp.post("/dialogflow", async (req, res) => {
                     <div style="border: 1px solid #dcdcdc; padding: 15px; border-radius: 10px; background-color: #f9f9f9;">
                         <p><strong>Email:</strong> ${email}</p>
                         <p><strong>Location:</strong> ${city}</p>
+                        <p><strong>Age:</strong> ${age}</p>
                         <p><strong>Contact Number:</strong> ${phone}</p>
                         <p><strong>CNIC:</strong> ${CNICnumber}</p>
                         <p><strong>Address:</strong> ${address}</p>
